@@ -1,3 +1,6 @@
+import draw from "./methods/draw";
+import move from "./methods/move";
+import getPosition from "./methods/getPosition";
 
 export default class Platfrom {
     constructor(position) {
@@ -10,21 +13,9 @@ export default class Platfrom {
             y: position.y - (this.sizes.h / 2)
         };
         this.velocity = 15;
-    }
-    move(dir) {
-        if(this.position.y<0) this.position.y = GL.h;
-        if(this.position.y>GL.h) this.position.y = -15;
-        
-        this.position.y += this.velocity*dir;
-        
-    }
-    draw() {
-        const { ctx } = GL;
 
-        ctx.fillStyle = "#fff";
-        ctx.fillRect(this.position.x, this.position.y, this.sizes.w, this.sizes.h);
-    }
-    getPosition() {
-        return this.position;
+        this.draw = draw.bind(this);
+        this.move = move.bind(this);
+        this.getPosition = getPosition.bind(this);
     }
 }
