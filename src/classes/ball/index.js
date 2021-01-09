@@ -9,7 +9,7 @@ export default class Ball {
             x:  Math.abs((this.radius * 2) + position.x),
             y: position.y + 50
         };
-        this.velocity = 10;
+        this.velocity = 12;
         this.dir = {
             x: this.position.x<=10 ? 1 : -1,
             y: 0
