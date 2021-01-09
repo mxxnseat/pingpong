@@ -24,4 +24,23 @@ export default class Game {
         this.init = init.bind(this);
         this.loop = loop.bind(this);
     }
+    moveListen() {
+        for (let k in this.pressedKey) {
+            switch (k) {
+                case '87':
+                    this.platform[0].move(-1)
+                    break;
+                case '83':
+                    this.platform[0].move(1);
+                    break;
+                case '38':
+                    this.platform[1].move(-1);
+                    break;
+                case '40':
+                    this.platform[1].move(1);
+                    break;
+            }
+
+        }
+    }
 }

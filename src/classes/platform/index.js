@@ -12,7 +12,7 @@ export default class Platfrom {
             x: position.x,
             y: position.y - (this.sizes.h / 2)
         };
-        this.velocity = 15;
+        this.velocity = 8;
 
         this.draw = draw.bind(this);
         this.move = move.bind(this);
